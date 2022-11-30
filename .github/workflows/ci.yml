@@ -24,4 +24,4 @@ jobs:
       # - name: Run all lints
       #   run: npm run lint
       - name: Build on EAS
-        run: eas build --profile preview -p android --local --non-interactive
+        run: EAS_NO_VCS=1 eas build --profile preview -p android --local --non-interactive
