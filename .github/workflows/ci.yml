@@ -34,7 +34,7 @@ jobs:
 #       - name: Build on EAS
 #         run: EAS_NO_VCS=1 eas build --profile preview -p android --local --non-interactive
       - name: Android build
-        run: npx expo-cli prebuild && cd android && chmod +x ./gradlew && ./gradlew assembleRelease
+        run: npx expo prebuild && cd android && chmod +x ./gradlew && ./gradlew assembleRelease
       - name: Upload Apk file
         uses: actions/upload-artifact@v3
         with:
