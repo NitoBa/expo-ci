@@ -31,8 +31,10 @@ jobs:
           architecture: x64 # (x64 or x86) - defaults to x64
       - name: Install Dependencies
         run: npm ci
-      - name: Build on EAS
-        run: EAS_NO_VCS=1 eas build --profile preview -p android --local --non-interactive
+#       - name: Build on EAS
+#         run: EAS_NO_VCS=1 eas build --profile preview -p android --local --non-interactive
+      - name: Android build
+        run: npx expo-cli prebuild && cd android && chmod +x ./gradlew && ./gradlew assembleRelease
       - name: Upload Apk file
         uses: actions/upload-artifact@v3
         with:
