@@ -33,3 +33,8 @@ jobs:
         run: npm ci
       - name: Build on EAS
         run: EAS_NO_VCS=1 eas build --profile preview -p android --local --non-interactive
+      - name: Upload Apk file
+        uses: actions/upload-artifact@v3
+        with:
+          name: expo-ci.apk
+          path: /home/runner/work/expo-ci/expo-ci/*.apk
